@@ -6,11 +6,15 @@ class Database {
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect('mongodb://localhost:27017/bank', {
-      useNewUrlParser: true,
-      useFindAndModify: true,
-      useUnifiedTopology: true,
-    });
+    this.mongoConnection = mongoose.connect(
+      'mongodb://localhost:27017/mongolinkapi',
+      {
+        useNewUrlParser: true,
+        useFindAndModify: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+      }
+    );
   }
 }
 
