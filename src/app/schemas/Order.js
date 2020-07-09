@@ -4,7 +4,8 @@ const Orders = new mongoose.Schema(
   {
     id_order: { type: String, required: true, unique: true },
     customer: {
-      name: { type: String, required: true },
+      company: { type: String, required: true },
+      contact_person: { type: String, required: true },
     },
     item: {
       code: { type: String, required: true, unique: true },

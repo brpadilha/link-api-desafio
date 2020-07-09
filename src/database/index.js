@@ -7,7 +7,7 @@ class Database {
 
   mongo() {
     this.mongoConnection = mongoose.connect(
-      'mongodb://localhost:27017/mongolinkapi',
+      'mongodb+srv://linkapi:linkapiteste@cluster0.5pegv.mongodb.net/linkapi?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useFindAndModify: true,
