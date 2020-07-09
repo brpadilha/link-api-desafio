@@ -1,48 +1,73 @@
-# GEN - A Back-end NodeJS Template using Express, Mongo + mongoose and Postgres + sequelize
+# Linkapi desafio - Um desafio backend para vaga na Linkapi
 
-# Postgres sequelize migrations
+- MongoDB Atlas Collections
 
-- Create Migration
-  \$ yarn sequelize migration:create --name=create-ModelName
+![collections](assets/atlas.png 'collections')
 
-- Run Migration
-  \$ yarn sequelize db:migrate
+- Pedidos Bling
+  ![pedidos](assets/bling.png 'pedidos')
 
-- Undo migration
-  \$ yarn sequelize db:migrate:undo
-  or
-  \$ yarn sequelize db:migrate:undo:all
+# Sobre o projeto
 
-# Mongo schemas
+Este projeto é a resolução de um desafio backend na LinkApi.
 
-You can create schemas on /app/schemas directly without command.
+### Requisitos
 
-# About this template
+● Criar contas testes nas plataformas Pipedrive e Bling.
 
-I had a problem to find backend nodejs templates with sequelize and postgres. And I choose to make it by myself.
+● Criar uma integração entre as plataformas Pipedrive e Bling. (A integração deve buscar as oportunidades com status igual a ganho no Pipedrive, depois inseri-las como pedido no Bling).
 
-# Template description
+● Criar banco de dados mongo, existem serviços como MongoDB Atlas para criar de graça
 
-This template is already configured with Postgres and mongo. User authentication is already done too.
+● Criar uma collection no banco de dados MongoDB agregando as oportunidades inseridas no Bling por dia e valor total.
 
-# Why?
+● Criar endpoint para trazer os dados consolidados da collection do MongoDB.
 
-This template is a part of my portfolio, that I wanted to improve my skills in resolving problems and create APIs.I will be happy if you provide me any feedback about this project, anything that you can report can make me a better developer!
+# Para rodar o projeto
 
-Email-me: brpadilha.dev@gmail.com
+<h3>Clone o repositório</h3>
 
-Connect with me at [Linkedin](https://www.linkedin.com/in/brpadilha/)
+```
+$ git clone git@github.com:brpadilha/link-api-desafio.git
 
-# Tips
+$ cd link-api-desafio
+```
 
-It is better for you to use Docker with mongo and Postgres.
+<h3>Instale as dependencias</h3>
 
-Postgres:
+```
+$ yarn
+```
 
-\$ docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+<h3>Rodar o projeto</h3>
 
-MongoDB:
+Para rodar a aplicação, no seu terminal digite:
 
-\$ docker run --name mongobarber -p 27017:27017 -d -t mongo
+```
+$ yarn dev
+```
 
----
+<h3>Rotas</h3>
+
+Neste projeto utilizei duas rotas, para inserir no banco MongoDB as oportunidades e para pegar os dados no banco de dados.
+
+POST - http://localhost:3333/order
+GET - http://localhost:3333/order
+
+Indico utilizar o insomnia o envio das requisições.
+
+# Main libraries
+
+```
+    "dotenv"
+    "express"
+    "mongoose"
+    "sequelize"
+    "sequelize-cli"
+    "axios"
+    "pipedrive"
+    "nodemon"
+    "sucrase"
+    "eslint"
+    "prettier"
+```

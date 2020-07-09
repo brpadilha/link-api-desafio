@@ -2,7 +2,6 @@ import Order from '../schemas/Order';
 import { post } from 'axios';
 import { DealsController } from 'pipedrive';
 import { BLING_CONSTANTS } from '../../utils/constants';
-import { v4 as uuidv4 } from 'uuid';
 import converDealToXml from '../../utils/xmlConverter';
 
 class OrderController {
